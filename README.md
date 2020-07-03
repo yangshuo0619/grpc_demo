@@ -1,3 +1,7 @@
-# hello
+# grpc demo
 
-shell file
+### build
+
+```
+make
+```
