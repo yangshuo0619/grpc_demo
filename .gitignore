@@ -1,4 +1,5 @@
 ./build
+./build/*
 *.pb.cc
 *.pb.h
 route_guide_client
