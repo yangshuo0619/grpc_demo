@@ -23,7 +23,7 @@ PROTO_LIST = $(shell ls -l ./protos | awk '{print $$9}' | cut -d' ' -f 1-)
 
 OUTDIR = build
 
-all: check_buidl_env clean proto_build route_guide_client route_guide_server
+all: pre_buidl clean proto_build route_guide_client route_guide_server
 
 route_guide_client: ./build/route_guide.pb.o ./build/route_guide.grpc.pb.o ./build/route_guide_client.o ./build/helper.o
 	@$(CXX) $^ $(LDFLAGS) -o $@
@@ -45,7 +45,7 @@ proto_build:
     done
 	@echo "proto file build is ok"
 
-check_buidl_env:
+pre_buidl:
 	@if [ ! -d "${OUTDIR}" ]; then \
         mkdir  ${OUTDIR}; \
     fi
